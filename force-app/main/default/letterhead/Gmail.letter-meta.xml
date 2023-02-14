@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#FFCCCC</backgroundColor>
+    <bodyColor>#99FFFF</bodyColor>
+    <bottomLine>
+        <color>#660000</color>
+        <height>0</height>
+    </bottomLine>
+    <footer>
+        <backgroundColor>#99FFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Left</horizontalAlignment>
+        <logo>C6_T4/Logo.png</logo>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#CCFFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#660000</color>
+        <height>0</height>
+    </middleLine>
+    <name>Gmail</name>
+    <topLine>
+        <color>#660000</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

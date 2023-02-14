@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssignmentRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignmentRule>
+        <fullName>CheckAssighmentRule</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <assignedTo>Nontechnical_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Reason</field>
+                <operation>contains</operation>
+                <value>Taking more time to  load the page.,Contact form is not submitted properly,Email is not receiving in company domain</value>
+            </criteriaItems>
+            <template>C6T4_Email_Templates/case_Assighment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Technical_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Reason</field>
+                <operation>contains</operation>
+                <value>Complex functionality,Account is not created using social media,Unable to track order,Website is not secured,Software is crashing for bulk entries</value>
+            </criteriaItems>
+            <template>C6T4_Email_Templates/case_Assighment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Technical_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Installation,system error</value>
+            </criteriaItems>
+            <template>C6T4_Email_Templates/case_Assighment</template>
+        </ruleEntry>
+        <ruleEntry>
+            <assignedTo>Nontechnical_Queue</assignedTo>
+            <assignedToType>Queue</assignedToType>
+            <criteriaItems>
+                <field>Case.Subject</field>
+                <operation>contains</operation>
+                <value>Email,guide</value>
+            </criteriaItems>
+            <template>C6T4_Email_Templates/case_Assighment</template>
+        </ruleEntry>
+    </assignmentRule>
+</AssignmentRules>

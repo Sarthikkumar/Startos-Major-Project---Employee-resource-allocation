@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Clients_Duration__c</fullName>
+    <externalId>false</externalId>
+    <label>Client&apos;s Duration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>0 - 3 Months</fullName>
+                <default>false</default>
+                <label>0 - 3 Months</label>
+            </value>
+            <value>
+                <fullName>3 - 6 Months</fullName>
+                <default>false</default>
+                <label>3 - 6 Months</label>
+            </value>
+            <value>
+                <fullName>6 - 9 Months</fullName>
+                <default>false</default>
+                <label>6 - 9 Months</label>
+            </value>
+            <value>
+                <fullName>9 - 12 Months</fullName>
+                <default>false</default>
+                <label>9 - 12 Months</label>
+            </value>
+            <value>
+                <fullName>&gt; 12 Months</fullName>
+                <default>false</default>
+                <label>&gt; 12 Months</label>
+            </value>
+            <value>
+                <fullName>10Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>10Months</label>
+            </value>
+            <value>
+                <fullName>11Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>11Months</label>
+            </value>
+            <value>
+                <fullName>12Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>12Months</label>
+            </value>
+            <value>
+                <fullName>1Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1Months</label>
+            </value>
+            <value>
+                <fullName>2Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2Months</label>
+            </value>
+            <value>
+                <fullName>3Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3Months</label>
+            </value>
+            <value>
+                <fullName>4Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4Months</label>
+            </value>
+            <value>
+                <fullName>5Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5Months</label>
+            </value>
+            <value>
+                <fullName>6Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>6Months</label>
+            </value>
+            <value>
+                <fullName>7Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>7Months</label>
+            </value>
+            <value>
+                <fullName>8Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>8Months</label>
+            </value>
+            <value>
+                <fullName>9Months</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>9Months</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

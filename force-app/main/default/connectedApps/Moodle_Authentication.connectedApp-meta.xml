@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>shashi@havefunsolving.com</contactEmail>
+    <label>Moodle Authentication</label>
+    <oauthConfig>
+        <callbackUrl>http://localhost:8080
+https://hfs.moodlecloud.com/admin/oauth2callback.php</callbackUrl>
+        <consumerKey>3MVG9rnryk9FxFMX.Ol9n.__jZ9OCgRyqvJNsWZkBvGqid.Ad.dYGRh1TaO90rx_m6uZZJCge2nqcthZS0_b7</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Basic</scopes>
+        <scopes>OpenID</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

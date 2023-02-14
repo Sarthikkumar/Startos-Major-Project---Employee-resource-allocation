@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>shashi@havefunsolving.com</contactEmail>
+    <label>Spreadsheet Upload</label>
+    <oauthConfig>
+        <callbackUrl>https://script.google.com/macros/d/1UKPuNlGlrGv3Pm8VGf7zLe7cmB6KqFdxOkFfQGyWyfCm-NadU89xgiD0/usercallback</callbackUrl>
+        <consumerKey>3MVG9rnryk9FxFMX.Ol9n.__jZ4lOu3ZypXIxv5H25b3R21ZeD2TR3BDTOKQv78yJ.3sfct_h2E_c0Z8wZLrJ</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Basic</scopes>
+        <scopes>Api</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

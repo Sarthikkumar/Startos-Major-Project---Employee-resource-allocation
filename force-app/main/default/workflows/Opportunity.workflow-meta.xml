@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Approvar_Request</fullName>
+        <description>Approvar Request</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>150470@stratos</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>sheeba.ramola@stratos.studio</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>C6T4_Email_Templates/Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Discussion_for_negotiation_for_quote</fullName>
+        <description>Discussion for negotiation  for quote</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>150470@stratos</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Welcome_Email_For_New_Lead</template>
+    </alerts>
+    <alerts>
+        <fullName>FInal_approval_email_alert_1</fullName>
+        <description>FInal approval email alert 1</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Approval_Email_Alert</fullName>
+        <description>Final Approval Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Final_Rejection_Email_Alert</fullName>
+        <description>Final Rejection Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Rejection_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Initial_Submission_Email_Alert</fullName>
+        <description>Initial Submission Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Notify_initial_approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Initial_Submitter_Email_Alert</fullName>
+        <description>Initial Submitter Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Representative</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Notify_initial_submitter</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Initial_Approver</fullName>
+        <description>Notify Initial Approver</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>150470@stratos</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Notify_initial_approver</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Executive_Approval</fullName>
+        <description>Sales Executive Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Executive_Rejection</fullName>
+        <description>Sales Executive Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Rejection_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Manager_Approval</fullName>
+        <description>Sales Manager Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Approval_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Manager_Rejection</fullName>
+        <description>Sales Manager Rejection</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>C6T4_Email_Templates/Rejection_Email</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Approval_status_to_not_approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not  Approved</literalValue>
+        <name>Approval status to not approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_for_2_10_percent</fullName>
+        <field>Discounted_Amount__c</field>
+        <formula>Estimated_Amount__c -  (Discount__c * Estimated_Amount__c)</formula>
+        <name>Discount for 2-10 percent</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_for_5_perc</fullName>
+        <field>Discounted_Amount__c</field>
+        <formula>IF(Discount__c &lt; 5 ,Estimated_Amount__c -  Discount__c * Estimated_Amount__c , Discount__c)</formula>
+        <name>Discount for &lt; 5 perc</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_for_more_than_10_per</fullName>
+        <field>Discounted_Amount__c</field>
+        <formula>Estimated_Amount__c -  (Discount__c * Estimated_Amount__c)</formula>
+        <name>Discount for more than 10 per</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_not_accepted</fullName>
+        <field>Discount__c</field>
+        <name>Discount not accepted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_not_approved</fullName>
+        <field>Discounted_Amount__c</field>
+        <name>Discount not approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_null</fullName>
+        <field>Discount__c</field>
+        <name>Discount null</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_to_Null</fullName>
+        <field>Discount__c</field>
+        <name>Discount to Null</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Discount_to_be_null</fullName>
+        <field>Discount__c</field>
+        <name>Discount to be null</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Final_approval_field_update</fullName>
+        <field>Discounted_Amount__c</field>
+        <formula>Estimated_Amount__c - (Discount__c *  Estimated_Amount__c)</formula>
+        <name>Final approval field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Sales_Executive</fullName>
+        <field>Discount__c</field>
+        <name>Sales Executive</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_be_pending</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Pending</literalValue>
+        <name>Set Status to be pending</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_be_rejected</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not  Approved</literalValue>
+        <name>Set Status to be rejected</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Set_Status_to_be_rejected1</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Not  Approved</literalValue>
+        <name>Set Status to be rejected1</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>aproved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>aproved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>sale</fullName>
+        <field>Discount__c</field>
+        <name>sale</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>status_to_approved</fullName>
+        <field>Approval_Status__c</field>
+        <literalValue>Approved</literalValue>
+        <name>status to approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+</Workflow>

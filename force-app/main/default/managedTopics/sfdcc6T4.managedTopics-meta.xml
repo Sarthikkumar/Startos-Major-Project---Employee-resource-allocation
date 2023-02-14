@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>sfdcc6T4.Content:Reliability, Diversity, Resiliency, Along With Flexible Solutions, And Business Continuity Are...</fullName>
+        <managedTopicType>Content</managedTopicType>
+        <name>Reliability, Diversity, Resiliency, Along With Flexible Solutions, And Business Continuity Are...</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Featured:Customer Support</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Customer Support</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Featured:New Products</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>New Products</name>
+        <parentName></parentName>
+        <position>2</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Featured:Non Technical</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Non Technical</name>
+        <parentName></parentName>
+        <position>4</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Featured:Social Groups</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Social Groups</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Featured:Technical</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Technical</name>
+        <parentName></parentName>
+        <position>3</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Navigational:Non Technical</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Non Technical</name>
+        <parentName></parentName>
+        <position>1</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+    <managedTopic>
+        <fullName>sfdcc6T4.Navigational:Technical</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Technical</name>
+        <parentName></parentName>
+        <position>0</position>
+        <topicDescription> </topicDescription>
+    </managedTopic>
+</ManagedTopics>

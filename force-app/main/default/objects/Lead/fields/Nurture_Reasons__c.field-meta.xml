@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nurture_Reasons__c</fullName>
+    <externalId>false</externalId>
+    <label>Nurture Reasons</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tentative timeframe</fullName>
+                <default>false</default>
+                <label>Tentative timeframe</label>
+            </value>
+            <value>
+                <fullName>Get to know more on pain points</fullName>
+                <default>false</default>
+                <label>Get to know more on pain points</label>
+            </value>
+            <value>
+                <fullName>No proper response</fullName>
+                <default>false</default>
+                <label>No proper response</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ConversionNotAllowdTillComplete</fullName>
+    <active>false</active>
+    <errorConditionFormula>IsConverted = TRUE &amp;&amp;  Qualified__c = FALSE</errorConditionFormula>
+    <errorMessage>You cant convert or update lead stage until it becomes qualified</errorMessage>
+</ValidationRule>

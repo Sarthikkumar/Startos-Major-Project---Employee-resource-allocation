@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cyntexa_Chart_Support_LiveChatTranscript</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Cyntexa Chart  Support</label>
+    <queue>Cyntexa_Chart_Support</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

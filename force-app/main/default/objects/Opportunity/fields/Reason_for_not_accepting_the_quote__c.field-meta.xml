@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_not_accepting_the_quote__c</fullName>
+    <externalId>false</externalId>
+    <label>Reason for not accepting the quote</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Proposal amount too high</fullName>
+                <default>false</default>
+                <label>Proposal amount too high</label>
+            </value>
+            <value>
+                <fullName>Got a better deal</fullName>
+                <default>false</default>
+                <label>Got a better deal</label>
+            </value>
+            <value>
+                <fullName>Duration not feasible</fullName>
+                <default>false</default>
+                <label>Duration not feasible</label>
+            </value>
+            <value>
+                <fullName>Resource scarcity</fullName>
+                <default>false</default>
+                <label>Resource scarcity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

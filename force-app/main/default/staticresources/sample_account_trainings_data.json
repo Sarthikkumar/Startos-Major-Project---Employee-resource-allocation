@@ -1,0 +1,60 @@
+[
+    {
+        "Name": "Stratos - Cohort 1 Training",
+        "Account_Training_Id__c": 1,
+        "Account__r": {
+            "Account_Id__c": 1
+        },
+        "Training__r": {
+            "Training_Id__c": 1
+        }
+    },
+    {
+        "Name": "Stratos - Cohort 2 Training",
+        "Account_Training_Id__c": 2,
+        "Account__r": {
+            "Account_Id__c": 2
+        },
+        "Training__r": {
+            "Training_Id__c": 2
+        }
+    },
+    {
+        "Name": "Stratos - Cohort 3 Training",
+        "Account_Training_Id__c": 3,
+        "Account__r": {
+            "Account_Id__c": 3
+        },
+        "Training__r": {
+            "Training_Id__c": 3
+        }
+    },
+    {
+        "Name": "Stratos - Cohort 4 Training",
+        "Account_Training_Id__c": 4,
+        "Account__r": {
+            "Account_Id__c": 4
+        },
+        "Training__r": {
+            "Training_Id__c": 4
+        }
+    },
+    {
+        "Name": "Stratos - Cohort 5 Training",
+        "Account_Training_Id__c": 5,
+        "Account__r": {
+            "Account_Id__c": 5
+        },
+        "Training__r": {
+            "Training_Id__c": 5
+        }
+    },
+    {
+        "Name": "Training Dropouts",
+        "Account_Training_Id__c": 6,
+        "Account__r": {
+            "Account_Id__c": 6
+        }
+    }
+    
+]

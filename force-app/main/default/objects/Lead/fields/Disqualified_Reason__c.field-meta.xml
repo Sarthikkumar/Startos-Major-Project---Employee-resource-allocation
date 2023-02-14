@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disqualified_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Disqualified Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No proper budget</fullName>
+                <default>false</default>
+                <label>No proper budget</label>
+            </value>
+            <value>
+                <fullName>Not responsive</fullName>
+                <default>false</default>
+                <label>Not Responsive</label>
+            </value>
+            <value>
+                <fullName>Contact information is incorrect (fake email, company name, etc.)</fullName>
+                <default>false</default>
+                <label>Contact information is incorrect (fake email, company name, etc.)</label>
+            </value>
+            <value>
+                <fullName>Not making purchase decision in the next 12 months</fullName>
+                <default>false</default>
+                <label>Not making purchase decision in the next 12 months</label>
+            </value>
+            <value>
+                <fullName>Bad Data</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Bad Data</label>
+            </value>
+            <value>
+                <fullName>Budget</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Budget</label>
+            </value>
+            <value>
+                <fullName>Partner/Competitor</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Partner/Competitor</label>
+            </value>
+            <value>
+                <fullName>Size</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Size</label>
+            </value>
+            <value>
+                <fullName>Timeline</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Timeline</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

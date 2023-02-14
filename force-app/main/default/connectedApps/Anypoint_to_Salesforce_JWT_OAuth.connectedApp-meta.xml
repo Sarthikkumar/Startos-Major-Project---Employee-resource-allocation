@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>shashidhar.gurumurthy@gmail.com</contactEmail>
+    <contactPhone>9845655100</contactPhone>
+    <label>Anypoint to Salesforce JWT OAuth</label>
+    <oauthConfig>
+        <callbackUrl>https://test.salesforce.com/services/oauth2/success</callbackUrl>
+        <certificate>MIIErDCCA5SgAwIBAgIOAW6S/7grAAAAABpLfvgwDQYJKoZIhvcNAQELBQAwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzIyTm92MjAxOV8xMjA0MjIxGDAWBgNVBAsMDzAwRDJ3MDAwMDAwRk53TTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0EwHhcNMTkxMTIyMTIwNDIyWhcNMjAxMTIyMTIwMDAwWjCBkDEoMCYGA1UEAwwfU2VsZlNpZ25lZENlcnRfMjJOb3YyMDE5XzEyMDQyMjEYMBYGA1UECwwPMDBEMncwMDAwMDBGTndNMRcwFQYDVQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNVBAYTA1VTQTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAImZObq+/TcQROxjyHmV1k+rmRt52StubXxDEWrWPCY330IN7587SGOO74JT5fqiT/QrWSFfvmQ/W7wOQ9K7gVWgTTWGnpD07CHYOCr4NKkKM/PnU2Tx2SZmPN1QWJGTtQlKX+lnkhnhWvoqxr85N7dvI7dbuWB/gHqZWmJVRed5QblE+eG5OraL2+Y/XlPH/FN1Y5Z/yQxspVeItqtWmSi6ULLtGEXf5ciMvwM54oA/y79+NE15McIvGIgC3kVFqnqIxBeW/vSvn89HFgyrCjLOR8Ynfh8rWdhDSrGphYHzBXF7xOIOXRyHm7vkpEruKwuPvUoNZ7/4nmaMoHzc2CUCAwEAAaOCAQAwgf0wHQYDVR0OBBYEFJPGDWwx9LzhviuJW7v2Aj9PMLBIMA8GA1UdEwEB/wQFMAMBAf8wgcoGA1UdIwSBwjCBv4AUk8YNbDH0vOG+K4lbu/YCP08wsEihgZakgZMwgZAxKDAmBgNVBAMMH1NlbGZTaWduZWRDZXJ0XzIyTm92MjAxOV8xMjA0MjIxGDAWBgNVBAsMDzAwRDJ3MDAwMDAwRk53TTEXMBUGA1UECgwOU2FsZXNmb3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNVU0GCDgFukv+4KwAAAAAaS374MA0GCSqGSIb3DQEBCwUAA4IBAQBqW4YGAA+0BanIKy3/FPAT1fYDsH9dLxnvADxhjGYwdiZFRs+ME9Ml4SqCSE9Jg8SUr5k1ZkrwBFz28ZowVf5vowiLbBrtHAlNESsDFX+xQuoT014JdYKqzYPzwyZvcwvewN/IemGxbpWA+iUEVDuS6xpsi5m4qV8rouw19cHb/CZQRWLoCJjxAspRBr+y9b+nL5hr8VHnswPXCyPKZle/9cI0DQhk4IrPePYIhQXil+pcHhmE30cxrpI1C6M3IDaOM5fb5nj68JKBp7+jv9dxtXPL428VozEd+svoUdtwCHuh1V9FOwAMXfAhH+9lcsb9kiKNF7GYNdnMZjogRkks</certificate>
+        <consumerKey>3MVG9rnryk9FxFMX.Ol9n.__jZ9OCgRyqvJNs.3NvRzt1V1DCGkPOdZpP9D..CADULcUc8KYhqWs2jL9N9Ziy</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isClientCredentialEnabled>false</isClientCredentialEnabled>
+        <isCodeCredentialEnabled>false</isCodeCredentialEnabled>
+        <isCodeCredentialPostOnly>false</isCodeCredentialPostOnly>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>false</isSecretRequiredForRefreshToken>
+        <scopes>Api</scopes>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>infinite</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

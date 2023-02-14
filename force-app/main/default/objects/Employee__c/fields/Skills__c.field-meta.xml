@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skills__c</fullName>
+    <externalId>false</externalId>
+    <label>Skills</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Role__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Solution Architect</fullName>
+                <default>false</default>
+                <label>Solution Architect</label>
+            </value>
+            <value>
+                <fullName>Salesforce Administrator</fullName>
+                <default>false</default>
+                <label>Salesforce Administrator</label>
+            </value>
+            <value>
+                <fullName>Salesforce Developer</fullName>
+                <default>false</default>
+                <label>Salesforce Developer</label>
+            </value>
+            <value>
+                <fullName>CPQ Developer</fullName>
+                <default>false</default>
+                <label>CPQ Developer</label>
+            </value>
+            <value>
+                <fullName>LWC Developer</fullName>
+                <default>false</default>
+                <label>LWC Developer</label>
+            </value>
+            <value>
+                <fullName>Salesforce QA Tester</fullName>
+                <default>false</default>
+                <label>Salesforce QA Tester</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>Salesforce Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Developer</controllingFieldValue>
+            <valueName>CPQ Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Tester</controllingFieldValue>
+            <valueName>Salesforce QA Tester</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Designer</controllingFieldValue>
+            <valueName>LWC Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Architect</controllingFieldValue>
+            <valueName>Solution Architect</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Manager</controllingFieldValue>
+            <valueName>Salesforce Administrator</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

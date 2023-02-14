@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Invoice_Generation_for_Project_Stages</fullName>
+        <description>Invoice Generation for Project Stages</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>sheeba.ramola@stratos.studio</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>C6T4_Email_Templates/Invoice_Generation</template>
+    </alerts>
+    <alerts>
+        <fullName>Request_for_due_payment</fullName>
+        <ccEmails>msgodbole1992@gmail.com</ccEmails>
+        <description>Request for due payment</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>sheeba.ramola@stratos.studio</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>C6T4_Email_Templates/payment_Due</template>
+    </alerts>
+</Workflow>

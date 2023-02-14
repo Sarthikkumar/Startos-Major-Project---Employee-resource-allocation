@@ -1,0 +1,86 @@
+<apex:page applyHtmlTag="false" docType="html-5.0" applyBodyTag="false" showHeader="false">
+  <html>
+<head>
+  <title>File Upload Using Content Version</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <input type="file" name="inputFile" id="inputFile" />
+  <input class="btn" value="Post File to Files" type="button" onClick="postFile()" />
+  <div class="progress">
+      <div class="progress-bar progress-bar-success myprogress" role="progressbar" style="width:0%">0%</div>
+  </div>
+  <div class="msg"></div>
+  <!-- This is not working as of 05-Jun-2018. Some issue with SubjectID. 
+       Explore the Chatter Feed Elements & Capabilities API. Looks like we have to upload file separately and then 
+       associate the file to the post. -->
+</body>
+<script type="text/javascript">
+  $(document).ready(function(){
+      console.log('jQuery ready');
+  });
+  var sessionId = '00Dp00000001eWu!AR0AQAQrhuoLgemWwuRXqP_fDa2QWCDAQi18wVZqsCq9.udoVAv7sbYz.cJl8syEfkI1sHLQ_P..EM2WG62ZDmMlip3MLimh';
+  
+  var postUrl = 'https://hfs--dev04dec19.my.salesforce.com/services/data/v48.0/sobjects/ContentVersion';
+ 
+ function postFile() {
+      var file = document.getElementById('inputFile').files[0];
+      var fileReader = new FileReader();
+      fileReader.readAsBinaryString(file);
+      
+      fileReader.onload = function(evt) {
+        //console.log(evt.target.result);
+        
+          var base64Value = btoa(evt.target.result);
+          var postBody = {};
+          postBody.Title = file.name;
+          postBody.PathOnClient = file.name;
+          postBody.ContentLocation = "S";
+          postBody.VersionData = base64Value;
+          postBody.FirstPublishLocationId = '500p0000007NijLAAS'; //Attach it to Case
+    
+          postData(postBody);
+      };
+
+  }
+  
+ 
+  function postData(postBody) {
+      $('.msg').text('Uploading in progress...');
+      $.ajax({
+         type: "POST",
+         url: postUrl,
+         headers: {"Authorization" : "OAuth " + sessionId,
+                   "Content-Type" : "application/json"}, 
+         crossDomain: true, 
+         data: JSON.stringify(postBody), 
+         success: function (responseData) {
+             $('.msg').text('Complete');
+             console.log('In Success');
+             console.log(responseData);
+         },
+         // this part is progress bar
+         xhr: function () {
+            var xhr = new window.XMLHttpRequest();
+            xhr.upload.addEventListener("progress", function (evt) {
+                if (evt.lengthComputable) {
+                    var percentComplete = evt.loaded / evt.total;
+                    percentComplete = parseInt(percentComplete * 100);
+                    $('.myprogress').text(percentComplete + '%');
+                    $('.myprogress').css('width', percentComplete + '%');
+                }
+            }, false);
+            return xhr;
+         },
+         error: function (request, status, error) {
+             console.log(status + ' : ' + error);
+         },      
+         complete: function () {
+             console.log('Done');
+             $('.msg').text('Done');
+         }
+      });
+  }
+</script>
+</html>
+</apex:page>

@@ -1,0 +1,48 @@
+<template>
+   <lightning-button variant="brand"
+   label="Open Search Tool"
+   title="Open Search Tool"
+   onclick={openModal}
+   class="slds-m-left_x-small">
+</lightning-button>
+
+<template if:true={isModalOpen}>
+
+   <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open" style="height:500px; padding-top:100px; padding-left:300px; padding-right:300px; max-width:1500px;">
+      <header class="slds-modal__header">
+         <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Employee Management Tool</h2>
+     </header>
+
+     <div class="slds-table--header-fixed_container slds-scrollable_y">
+   <template if:true={selectedEmployees.length}>
+    <h1 style="text-align: center; color:white; background-color:#03465D"><b>Selected Employees</b></h1>
+    <lightning-datatable
+                   key-field="Id"
+                   data={selectedEmployees}
+                   columns={columns}
+    >
+   </lightning-datatable><br/>
+
+   </template>
+   <h1 style="text-align: center; color:white; background-color:#03465D;"><b>Available Employees</b></h1>
+    <lightning-datatable
+                    key-field="Id"
+                    data={Employees.data}
+                    columns={columns}
+                    onrowselection={getSelectedEmployees}
+                    >
+    </lightning-datatable>
+
+</div>
+   
+   <footer class="slds-modal__footer">
+      <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+      <button class="slds-button slds-button_brand" onclick={submitDetails} title="Assign">Assign</button>
+  </footer>
+
+</section>
+<div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+
+
+</template>
+</template>

@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "Cohort-1",
+        "Account_Id__c": 1	
+    },
+    {
+        "Name": "Cohort-2",
+        "Account_Id__c": 2
+    },
+    {
+        "Name": "Cohort-3",
+        "Account_Id__c": 3
+    },
+    {
+        "Name": "Cohort-4",
+        "Account_Id__c": 4
+    },
+    {
+        "Name": "Cohort-5",
+        "Account_Id__c": 5
+    },
+    {
+        "Name": "Stratos - Discontinued Consultants",
+        "Account_Id__c": 6
+    }
+]

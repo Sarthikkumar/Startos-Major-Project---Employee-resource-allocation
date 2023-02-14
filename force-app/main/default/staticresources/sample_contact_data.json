@@ -1,0 +1,29 @@
+[
+    {
+        "LastName": "Sreeguru",
+        "Contact_Id__c": 1
+    },
+    {
+        "LastName": "Resham",
+        "Contact_Id__c": 2
+    },
+    {
+        "LastName": "Ravi",
+        "Contact_Id__c": 3
+    },
+    {
+        "LastName": "Shankar",
+        "Contact_Id__c": 4
+    },
+    {
+        "LastName": "Haider",
+        "Contact_Id__c": 5
+    },
+    {
+        "LastName": "Ron",
+        "Contact_Id__c": 6,
+        "Account__r": {
+            "Account_Id__c": 6
+        }
+    }    
+]

@@ -1,0 +1,28 @@
+.offset {
+    position: absolute;
+    left: 120px;
+   
+  }
+.offset-label{
+    position: absolute;
+    left: 20px;
+}
+.offset-submit{
+    position: center;
+}
+.offsetInput{
+    width: 300px;
+    min-width: 50px;
+    max-width: 400px;
+    left : 50px;
+    right: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+.formDimensions{
+    width: 500px;
+    height: 400px;
+}
+.submitButton{
+    padding:80px 4px 80px 4px;
+}

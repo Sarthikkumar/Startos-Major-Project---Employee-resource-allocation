@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>senddue</name>
+        <label>senddue</label>
+        <locationX>50</locationX>
+        <locationY>396</locationY>
+        <actionName>Project_Invoice__c.sendfuepyment</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Unqualified_Lead_check</name>
+        <label>Unqualified Lead check</label>
+        <locationX>182</locationX>
+        <locationY>276</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>More_than_30_days</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Unqualifiedformula</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>senddue</targetReference>
+            </connector>
+            <label>More than 30 days</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>Unqualifiedformula</name>
+        <dataType>Boolean</dataType>
+        <expression>{!$Record.LastModifiedDate}   &lt; {!$Flow.CurrentDateTime}</expression>
+    </formulas>
+    <interviewLabel>sendpendingpayment {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>sendpendingpayment</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Unqualified_Lead_check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Payment_Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Payment Due</stringValue>
+            </value>
+        </filters>
+        <object>Project_Invoice__c</object>
+        <schedule>
+            <frequency>Daily</frequency>
+            <startDate>2022-08-23</startDate>
+            <startTime>01:07:00.000Z</startTime>
+        </schedule>
+        <triggerType>Scheduled</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

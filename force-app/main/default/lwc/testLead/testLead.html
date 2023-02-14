@@ -1,0 +1,79 @@
+<template>
+    
+    <lightning-card class="slds-size_small" title="Enquiry" icon-name="standard:account">
+    <form onsubmit={onSubmit} action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+        
+            
+    <input type=hidden name="oid" value="00D0w0000001TLd">
+    <input type=hidden name="retURL" value="https://hfs--c6t4.sandbox.my.site.com/sfdcc6T4">
+ 
+    
+    <lightning-input class="offsetInput slds-p-bottom_xxx-small" label="First Name" id="first_name" maxlength="40" name="first_name" size="60" type="text" required></lightning-input>
+    
+    <lightning-input class="offsetInput slds-p-bottom_xxx-small" label="Last Name" id="last_name" maxlength="80" name="last_name" size="60" type="text" required></lightning-input>
+    
+    <lightning-input class="offsetInput slds-p-bottom_xxx-small" label="Email" id="email" maxlength="80" name="email" size="60" type="text" required></lightning-input>
+    
+    <lightning-input class="offsetInput slds-p-bottom_xxx-small" label="Company" id="company" maxlength="40" name="company" size="60" type="text" required></lightning-input>
+     
+    <lightning-input class="offsetInput slds-p-bottom_xxx-small" label="Mobile" id="mobile" maxlength="40" name="mobile" size="60" type="text" required></lightning-input>
+   
+
+
+        <div class="slds-form-element" >
+            <label class="slds-form-element__label" for="select-01">
+                <abbr class="slds-required" title="required" style="margin-left:50px;">* </abbr>Select Title</label>
+                        <div >
+                        <div >
+
+
+                        <select class="slds-select" name="title" id="title" style="width:300px;margin-left:50px;margin-bottom: 10px;" required>
+                            <option >Select</option>
+                            <option value="CXO">CXO</option>
+                         <option value="VP & Head">VP & Head</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Executive">Executive</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+
+
+
+<div class="slds-form-element" >
+    <label class="slds-form-element__label" for="select-01">
+        <abbr class="slds-required" title="required" style="margin-left:50px;">* </abbr>Select Budget Range </label>
+                <div >
+                <div >
+
+
+               
+
+            <select  class="slds-select" name="00N0w000008C4jJ" id="00N0w000008C4jJ" style="width:300px;margin-left:50px;" required>
+                <option >Select</option>
+                <option value="5-15 Lakhs">5-15 Lakhs</option>
+                <option value="15-35 Lakhs">15-35 Lakhs</option>
+                <option value="35-60 Lakhs">35-60 Lakhs</option>
+                <option value=">60 Lakhs">>60 Lakhs</option>
+             </select>
+</div>
+</div>
+
+</div>
+
+           
+
+
+
+     <input class="offset" id="state1" maxlength="20" name="lead_source" value="Website" size="20" type="hidden" />
+    
+    <input class="offset"  id="rating" maxlength="80" name="rating" size="20" value={rating} type="hidden" required/><br>
+    
+    <center><lightning-button type= "submit" variant="brand" label="Submit" title="Primary action"  class="submitButton"></lightning-button></center>
+    
+    
+    </form>
+</lightning-card>
+    
+</template>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Solution Architect</fullName>
+        <default>false</default>
+        <label>Solution Architect</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce Administrator</fullName>
+        <default>false</default>
+        <label>Salesforce Administrator</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce Developer</fullName>
+        <default>false</default>
+        <label>Salesforce Developer</label>
+    </customValue>
+    <customValue>
+        <fullName>CPQ Developer</fullName>
+        <default>false</default>
+        <label>CPQ Developer</label>
+    </customValue>
+    <customValue>
+        <fullName>LWC Developer</fullName>
+        <default>false</default>
+        <label>LWC Developer</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce QA Tester</fullName>
+        <default>false</default>
+        <label>Salesforce QA Tester</label>
+    </customValue>
+    <customValue>
+        <fullName>Dot Net</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Dot Net</label>
+    </customValue>
+    <customValue>
+        <fullName>HTML</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>HTML</label>
+    </customValue>
+    <customValue>
+        <fullName>Java</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Java</label>
+    </customValue>
+    <customValue>
+        <fullName>JavaScript</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>JavaScript</label>
+    </customValue>
+    <customValue>
+        <fullName>My SQL</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>My SQL</label>
+    </customValue>
+    <customValue>
+        <fullName>Oracle</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Oracle</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Others</label>
+    </customValue>
+    <customValue>
+        <fullName>PHP</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>PHP</label>
+    </customValue>
+    <customValue>
+        <fullName>Python</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Python</label>
+    </customValue>
+    <customValue>
+        <fullName>R</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>R</label>
+    </customValue>
+    <customValue>
+        <fullName>React JS</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>React JS</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Salesforce</label>
+    </customValue>
+    <customValue>
+        <fullName>Selenium</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Selenium</label>
+    </customValue>
+    <customValue>
+        <fullName>SQL</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>SQL</label>
+    </customValue>
+    <customValue>
+        <fullName>C++</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>C++</label>
+    </customValue>
+    <customValue>
+        <fullName>C#</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>C#</label>
+    </customValue>
+    <customValue>
+        <fullName>ASP.NET</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>ASP.NET</label>
+    </customValue>
+    <customValue>
+        <fullName>Angular</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Angular</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce  Consultant</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Salesforce  Consultant</label>
+    </customValue>
+    <customValue>
+        <fullName>Business Analyst</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Business Analyst</label>
+    </customValue>
+    <customValue>
+        <fullName>Salesforce Platform Manager:</fullName>
+        <default>false</default>
+        <isActive>false</isActive>
+        <label>Salesforce Platform Manager:</label>
+    </customValue>
+    <masterLabel>Technical Skills</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

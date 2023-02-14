@@ -1,0 +1,37 @@
+<template>
+ 
+
+  
+    <lightning-card title="Available Employees with Required Skills" icon-name="standard:data_mapping">
+        
+        <div slot="Header">
+            
+        </div>
+
+        
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-table_col-bordered slds-table_striped">
+                <thead>
+                    <tr class="slds-text-title_caps">
+                        <th scope="col">
+                            <div title="Key">Role</div>
+                        </th>
+                        <th scope="col">
+                            <div title="Value">No of Available Resources</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={mapData} for:item="map">
+                        <tr key={map.key}>
+                            <th scope="col">
+                                <div title={map.key}>{map.key}</div>
+                            </th>
+                            <th scope="col">
+                                <div title={map.value}>{map.value}</div>
+                            </th>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+    </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "Cohort-1 Training",
+        "Training_Id__c": 1
+    },
+    {
+        "Name": "Cohort-2 Training",
+        "Training_Id__c": 2
+    },
+    {
+        "Name": "Cohort-3 Training",
+        "Training_Id__c": 3
+    },
+    {
+        "Name": "Cohort-4 Training",
+        "Training_Id__c": 4
+    },
+    {
+        "Name": "Cohort-5 Training",
+        "Training_Id__c": 5
+    }
+    
+]

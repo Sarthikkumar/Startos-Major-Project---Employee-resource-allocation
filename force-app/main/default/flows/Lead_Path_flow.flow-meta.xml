@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>IF_New</name>
+        <label>IF New</label>
+        <locationX>314</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Calculate_Rating_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IfStatusNew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Email</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.MobilePhone</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Website</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ChangeStatustoWorking</targetReference>
+            </connector>
+            <label>IfStatusNew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Nurturing</name>
+        <label>If Nurturing</label>
+        <locationX>314</locationX>
+        <locationY>1223</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Unqualify_Lead</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Rating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cold</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Nurture_Reasons__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No proper response</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Nurture_Reasons__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Tentative timeframe</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ChangeStatustoUnqualified</targetReference>
+            </connector>
+            <label>Unqualify Lead</label>
+        </rules>
+        <rules>
+            <name>Qualifying_Lead</name>
+            <conditionLogic>(1 OR 2) AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Rating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Warm</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Rating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Hot</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Clients_Pain_Point__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Nurture_Reasons__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Get to know more on pain points</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ChangeStatustoQualified</targetReference>
+            </connector>
+            <label>Qualifying Lead</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IF_Working</name>
+        <label>IF Working</label>
+        <locationX>314</locationX>
+        <locationY>767</locationY>
+        <defaultConnector>
+            <targetReference>Calculate_Rating</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IfStatusisWorking_0</name>
+            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Working</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Makes_a_Deal_Within__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Budget_Range__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ChangeStatustoNurturing_0_0</targetReference>
+            </connector>
+            <label>IfStatusisWorking</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>LeadScoringFormula</name>
+        <dataType>Number</dataType>
+        <expression>IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;None&quot; ),25,0)
++
+IF(ISPICKVAL({!$Record.Budget_Range__c}, &quot;None&quot;), 10,0)
++
+
+IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;0 - 3 Months&quot; ),25,0)
++
+IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;3 - 6 Months&quot; ),20,0)
++
+IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;6 - 9 Months&quot; ),15,0)
++
+IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;9 - 12 Months&quot; ),10,0)
++
+IF(ISPICKVAL({!$Record.Makes_a_Deal_Within__c} ,&quot;&gt; 12 Months&quot; ),5,0)
++
+IF(ISPICKVAL({!$Record.Budget_Range__c}, &quot;5-15 Lakhs&quot;), 10,0)
++
+IF(ISPICKVAL({!$Record.Budget_Range__c}, &quot;15-35 Lakhs&quot;), 20,0)
++
+IF(ISPICKVAL({!$Record.Budget_Range__c}, &quot;35-60 Lakhs&quot;), 30,0)
++
+IF(ISPICKVAL({!$Record.Budget_Range__c}, &quot;&gt;60 Lakhs&quot;), 40,0)</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>RatingFormula</name>
+        <dataType>String</dataType>
+        <expression>IF( {!LeadScoringFormula}&gt;0 &amp;&amp; {!LeadScoringFormula}&lt;= 25, &quot;Cold&quot;, IF( {!LeadScoringFormula} &gt;25 &amp;&amp; {!LeadScoringFormula}  &lt;= 50, &quot;Warm&quot;, IF( {!LeadScoringFormula} &gt;50 ,&quot;Hot&quot;, &quot;&quot; ) ) )</expression>
+    </formulas>
+    <interviewLabel>Lead Path flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Lead Path flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Calculate_Rating</name>
+        <label>Calculate Rating</label>
+        <locationX>314</locationX>
+        <locationY>1103</locationY>
+        <connector>
+            <targetReference>If_Nurturing</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Calculate_Rating_0</name>
+        <label>Calculate Rating</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <connector>
+            <targetReference>IF_Working</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>ChangeStatustoNurturing_0_0</name>
+        <label>ChangeStatustoNurturing</label>
+        <locationX>182</locationX>
+        <locationY>887</locationY>
+        <connector>
+            <targetReference>Calculate_Rating</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Nurturing</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>ChangeStatustoQualified</name>
+        <label>ChangeStatustoQualified</label>
+        <locationX>314</locationX>
+        <locationY>1343</locationY>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Qualified</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>ChangeStatustoUnqualified</name>
+        <label>ChangeStatustoUnqualified</label>
+        <locationX>50</locationX>
+        <locationY>1343</locationY>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Unqualified</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>ChangeStatustoWorking</name>
+        <label>ChangeStatustoWorking</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Calculate_Rating_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Rating</field>
+            <value>
+                <elementReference>RatingFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Working</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>IF_New</targetReference>
+        </connector>
+        <object>Lead</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

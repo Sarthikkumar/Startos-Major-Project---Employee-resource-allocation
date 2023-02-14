@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cytexa_Support_Queue_LiveChatTranscript</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Cytexa Support Queue</label>
+    <queue>Cytexa_Support_Queue</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

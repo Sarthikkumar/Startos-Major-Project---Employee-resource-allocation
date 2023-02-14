@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>55.0</apiVersion>
+    <decisions>
+        <name>Opportunity_Stages</name>
+        <label>Opportunity Stages</label>
+        <locationX>314</locationX>
+        <locationY>311</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Stages_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkValidationForNew</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Project__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>New</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ChangeStatusToScoping</targetReference>
+            </connector>
+            <label>checkValidationForNew</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Stages_0</name>
+        <label>Opportunity Stages</label>
+        <locationX>314</locationX>
+        <locationY>647</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Stages_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkValidationforScoping_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Scoping</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Clients_Duration__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Required_Skills__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_of_Designer__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_of_Developer__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.No_of_Tester__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Budget_Range__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatustoEstimation_0_0</targetReference>
+            </connector>
+            <label>checkValidationforScoping</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Stages_0_0</name>
+        <label>Opportunity Stages</label>
+        <locationX>314</locationX>
+        <locationY>983</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Stages_0_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkValidationforEstimation</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Estimation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Op_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Development_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Implementation_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.QA_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Planning_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Design_Cost_per_hour__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatustoProposal</targetReference>
+            </connector>
+            <label>checkValidationforEstimation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Stages_0_0_0</name>
+        <label>Opportunity Stages</label>
+        <locationX>314</locationX>
+        <locationY>1319</locationY>
+        <defaultConnector>
+            <targetReference>Opportunity_Stages_0_0_0_0</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkValidationforProposal</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proposal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accepted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatusClosedWon</targetReference>
+            </connector>
+            <label>checkValidationforProposal</label>
+        </rules>
+        <rules>
+            <name>checkValidationNegotiation</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Proposal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatustoNegotiation</targetReference>
+            </connector>
+            <label>checkValidationNegotiation</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Opportunity_Stages_0_0_0_0</name>
+        <label>Opportunity Stages</label>
+        <locationX>314</locationX>
+        <locationY>1655</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>checkValidationforNegotiation_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negotiation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accepted</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatusClosedWon_0</targetReference>
+            </connector>
+            <label>checkValidationforNegotiation</label>
+        </rules>
+        <rules>
+            <name>checkValidationforClosedLost</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.StageName</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Negotiation</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Quote_Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Denied</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>changeStatusClosedLost</targetReference>
+            </connector>
+            <label>checkValidationforClosedLost</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <formulas>
+        <name>EstimatedTimeFrameFormula</name>
+        <dataType>String</dataType>
+        <expression>IF( {!EstimationTimeFrameTotal} &gt; 0 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 1,&apos;1Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 1 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 2,&apos;2Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 2 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 3,&apos;3Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 3 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 4,&apos;4Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 4 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 5,&apos;5Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 5 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 6,&apos;6Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 6 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 7,&apos;7Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 7 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 8,&apos;8Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 8 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 9,&apos;9Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 9 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 10,&apos;10Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 10 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 11,&apos;11Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 11 &amp;&amp; {!EstimationTimeFrameTotal} &lt;= 12,&apos;12Months&apos;,
+
+IF( {!EstimationTimeFrameTotal} &gt; 12 ,&apos;12+Months&apos;, null)))))))))))))</expression>
+    </formulas>
+    <formulas>
+        <name>EstimationAmtFormula</name>
+        <dataType>Currency</dataType>
+        <expression>({!$Record.Planning_Cost_per_hour__c} * {!$Record.Planning_Estimated_hours__c} * {!$Record.Planning_Resources_Per_Project_Phase__c} )
++
+( {!$Record.Req_Cost_per_hour__c} * {!$Record.Req_Estimated_hours__c} * {!$Record.Req_Resources_Per_Project_Phase__c} )
++
+( {!$Record.Design_Cost_per_hour__c} * {!$Record.Design_Estimated_hours__c} * {!$Record.Design_Resources_Per_Project_Phase__c} )
++
+( {!$Record.Dev_Estimated_Hours__c} * {!$Record.Development_Cost_per_hour__c} * {!$Record.Development_Resources_Per_Project_Phase__c} )
++
+( {!$Record.Op_Cost_per_hour__c} * {!$Record.Op_Estimated_hours__c} * {!$Record.Operation_No_Of_Resources__c} )
++
+( {!$Record.QA_Cost_per_hour__c} * {!$Record.QA_Resources_Per_Project_Phase__c} * {!$Record.QA_Estimated_hours__c} )
++
+( {!$Record.Estimated_Hours_For_Implementation__c} * {!$Record.Implementation_Cost_per_hour__c} * {!$Record.No_of_resources_for_Implementation__c} )</expression>
+        <scale>0</scale>
+    </formulas>
+    <formulas>
+        <name>EstimationTimeFrameTotal</name>
+        <dataType>Number</dataType>
+        <expression>({!$Record.Design_Estimated_hours__c} * {!$Record.Design_Resources_Per_Project_Phase__c} + {!$Record.Dev_Estimated_Hours__c} * {!$Record.Development_Resources_Per_Project_Phase__c}+ {!$Record.Estimated_Hours_For_Implementation__c} * {!$Record.No_of_resources_for_Implementation__c} + {!$Record.Op_Estimated_hours__c} * {!$Record.Operation_No_Of_Resources__c}+ {!$Record.Planning_Estimated_hours__c} * {!$Record.Planning_Resources_Per_Project_Phase__c}+ {!$Record.QA_Estimated_hours__c} * {!$Record.QA_Resources_Per_Project_Phase__c}+ {!$Record.Req_Estimated_hours__c} * {!$Record.Req_Resources_Per_Project_Phase__c}) * 0.001369</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Opportunity Sales Process {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Opportunity Sales Process</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>changeStatusClosedLost</name>
+        <label>changeStatusClosedLost</label>
+        <locationX>314</locationX>
+        <locationY>1775</locationY>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>changeStatusClosedWon</name>
+        <label>changeStatusClosedWon</label>
+        <locationX>50</locationX>
+        <locationY>1439</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages_0_0_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>changeStatusClosedWon_0</name>
+        <label>changeStatusClosedWon</label>
+        <locationX>50</locationX>
+        <locationY>1775</locationY>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>changeStatustoEstimation_0_0</name>
+        <label>changeStatustoEstimation</label>
+        <locationX>182</locationX>
+        <locationY>767</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Estimation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>changeStatustoNegotiation</name>
+        <label>changeStatustoNegotiation</label>
+        <locationX>314</locationX>
+        <locationY>1439</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages_0_0_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Negotiation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>changeStatustoProposal</name>
+        <label>changeStatustoProposal</label>
+        <locationX>182</locationX>
+        <locationY>1103</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages_0_0_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Estimated_Amount__c</field>
+            <value>
+                <elementReference>EstimationAmtFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Estimated_time_frame__c</field>
+            <value>
+                <elementReference>EstimatedTimeFrameFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Proposal</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>ChangeStatusToScoping</name>
+        <label>ChangeStatusToScoping</label>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages_0</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Scoping</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>188</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Opportunity_Stages</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
